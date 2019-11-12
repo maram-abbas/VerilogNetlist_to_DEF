@@ -10,3 +10,6 @@ HOW TO USE:
 	- pins file
 	- core utilization
 	- aspect ratio representing (core height / core width)
+
+DEPENDENCIES:
+This project uses a LEF parser done by https://github.com/trimcao/lef-parser
