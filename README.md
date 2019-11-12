@@ -13,3 +13,13 @@ HOW TO USE:
 
 DEPENDENCIES:
 This project uses a LEF parser done by https://github.com/trimcao/lef-parser
+
+ASSUMPTIONS:
+- The DIEAREA's width is found by getting the total number of pins and multiplied by 400. Same thing is done for height.
+
+- UNITS DISTANCE MICRONS is assumed to be 100.
+
+- The DEF file generated is assumed to look as the samples send on Slack.
+
+LIMITATIONS:
+- The pins file should end with a new line
