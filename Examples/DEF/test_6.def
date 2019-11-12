@@ -1,0 +1,80 @@
+VERSION 5.6 ;
+NAMESCASESENSITIVE ON ;
+DIVIDERCHAR "/" ;
+BUSBITCHARS "<>" ;
+DESIGN test_6 ;
+UNITS DISTANCE MICRONS 100 ;
+
+DIEAREA ( -480 -400 ) ( 7520 7400 ) ;
+
+TRACKS Y -400 DO 40 STEP 200 LAYER metal1 ;
+TRACKS X -480 DO 51 STEP 160 LAYER metal2 ;
+TRACKS Y -400 DO 40 STEP 200 LAYER metal3 ;
+TRACKS X -480 DO 26 STEP 320 LAYER metal4 ;
+
+COMPONENTS 4 ;
+- NOR2X1_1 NOR2X1 + PLACED ( 0 0 ) ; 
+- AND2X2_1 AND2X2 + PLACED ( 0 0 ) ; 
+- OAI21X1_1 OAI21X1 + PLACED ( 0 0 ) ; 
+- NAND2X1_1 NAND2X1 + PLACED ( 0 0 ) ; 
+END COMPONENTS
+
+PINS 7 ;
+- a<0> + NET a<0>
+  + LAYER metal4 ( 0 0 ) ( 1 1 )
+  + PLACED ( 2320 7400 ) N ;
+- a<1> + NET a<1>
+  + LAYER metal4 ( 0 0 ) ( 1 1 )
+  + PLACED ( 2640 7400 ) N ;
+- b<0> + NET b<0>
+  + LAYER metal4 ( 0 0 ) ( 1 1 )
+  + PLACED ( 2960 7400 ) N ;
+- b<1> + NET b<1>
+  + LAYER metal4 ( 0 0 ) ( 1 1 )
+  + PLACED ( 3280 7400 ) N ;
+- c<0> + NET c<0>
+  + LAYER metal1 ( 0 0 ) ( 1 1 )
+  + PLACED ( -480 2400 ) N ;
+- c<1> + NET c<1>
+  + LAYER metal1 ( 0 0 ) ( 1 1 )
+  + PLACED ( -480 2600 ) N ;
+- y + NET y
+  + LAYER metal3 ( 0 0 ) ( 1 1 )
+  + PLACED ( 7520 2400 ) N ;
+END PINS
+
+NETS 11 ;
+- a<1>
+  ( PIN a<1> )
+  ( NOR2X1_1 A ) ;
+- a<0>
+  ( PIN a<0> )
+  ( NOR2X1_1 B ) ;
+- _0_
+  ( NOR2X1_1 Y ) ;
+- b<1>
+  ( PIN b<1> )
+  ( AND2X2_1 A ) ;
+- b<0>
+  ( PIN b<0> )
+  ( AND2X2_1 B ) ;
+- _1_
+  ( OAI21X1_1 A )
+  ( AND2X2_1 Y ) ;
+- _2_
+  ( OAI21X1_1 B ) ;
+- c<0>
+  ( PIN c<0> )
+  ( OAI21X1_1 C ) ;
+- _3_
+  ( NAND2X1_1 A )
+  ( OAI21X1_1 Y ) ;
+- c<1>
+  ( PIN c<1> )
+  ( NAND2X1_1 B ) ;
+- y
+  ( PIN y )
+  ( NAND2X1_1 Y ) ;
+END NETS
+
+END DESIGN

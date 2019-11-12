@@ -1,0 +1,65 @@
+VERSION 5.6 ;
+NAMESCASESENSITIVE ON ;
+DIVIDERCHAR "/" ;
+BUSBITCHARS "<>" ;
+DESIGN test_5 ;
+UNITS DISTANCE MICRONS 100 ;
+
+DIEAREA ( -480 -400 ) ( 6080 6100 ) ;
+
+TRACKS Y -400 DO 33 STEP 200 LAYER metal1 ;
+TRACKS X -480 DO 42 STEP 160 LAYER metal2 ;
+TRACKS Y -400 DO 33 STEP 200 LAYER metal3 ;
+TRACKS X -480 DO 21 STEP 320 LAYER metal4 ;
+
+COMPONENTS 2 ;
+- NAND3X1_1 NAND3X1 + PLACED ( 0 0 ) ; 
+- NAND3X1_2 NAND3X1 + PLACED ( 0 0 ) ; 
+END COMPONENTS
+
+PINS 6 ;
+- a<0> + NET a<0>
+  + LAYER metal2 ( 0 0 ) ( 1 1 )
+  + PLACED ( 1920 -400 ) N ;
+- a<1> + NET a<1>
+  + LAYER metal2 ( 0 0 ) ( 1 1 )
+  + PLACED ( 2080 -400 ) N ;
+- b<0> + NET b<0>
+  + LAYER metal2 ( 0 0 ) ( 1 1 )
+  + PLACED ( 2240 -400 ) N ;
+- b<1> + NET b<1>
+  + LAYER metal2 ( 0 0 ) ( 1 1 )
+  + PLACED ( 2400 -400 ) N ;
+- c + NET c
+  + LAYER metal4 ( 0 0 ) ( 1 1 )
+  + PLACED ( 1920 -400 ) N ;
+- y + NET y
+  + LAYER metal4 ( 0 0 ) ( 1 1 )
+  + PLACED ( 2240 6100 ) N ;
+END PINS
+
+NETS 7 ;
+- a<0>
+  ( PIN a<0> )
+  ( NAND3X1_1 A ) ;
+- a<1>
+  ( PIN a<1> )
+  ( NAND3X1_1 B ) ;
+- b<0>
+  ( PIN b<0> )
+  ( NAND3X1_1 C ) ;
+- _0_
+  ( NAND3X1_2 C )
+  ( NAND3X1_1 Y ) ;
+- b<1>
+  ( PIN b<1> )
+  ( NAND3X1_2 A ) ;
+- c
+  ( PIN c )
+  ( NAND3X1_2 B ) ;
+- y
+  ( PIN y )
+  ( NAND3X1_2 Y ) ;
+END NETS
+
+END DESIGN
