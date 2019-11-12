@@ -7,7 +7,7 @@ HOW TO USE:
 - When running the file, the following inputs should be provided:
 	- Verilog netlist file
 	- LEF file
-	- pins file
+	- pins file that contains specific information about the pins (look at examples folder)
 	- core utilization
 	- aspect ratio representing (core height / core width)
 
