@@ -1,0 +1,7 @@
+a<0>	D	M4
+a<1>	D	M4
+b<0>	D	M4
+b<1>	D	M4
+c<0>	L	M1
+c<1>	L	M1
+y	R	M3

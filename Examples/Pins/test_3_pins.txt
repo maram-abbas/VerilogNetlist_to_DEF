@@ -1,0 +1,6 @@
+a<0>	U	M2
+a<1>	U	M2
+a<2>	U	M2
+a<3>	U	M2
+ci	D	M4
+co	L	M3

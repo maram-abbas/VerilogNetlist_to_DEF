@@ -1,0 +1,6 @@
+a<0>	U	M2
+a<1>	U	M2
+b<0>	U	M2
+b<1>	U	M2
+c	U	M4
+y	D	M4
