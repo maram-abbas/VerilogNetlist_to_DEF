@@ -10,7 +10,7 @@ HOW TO USE:
 	- pins file that contains specific information about the pins (look at examples folder)
 	- core utilization
 	- aspect ratio representing (core height / core width)
-- You can use pin_gen.py by giving it the Verilog netlist file and it will generate the pins file.
+- You can use gen_pins_file.py by giving it the Verilog netlist file and it will generate the pins file.
 
 DEPENDENCIES:
 This project uses a LEF parser done by https://github.com/trimcao/lef-parser
